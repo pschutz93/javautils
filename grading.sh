@@ -74,7 +74,14 @@ fi
 echo "Chained Ifs"
 count=$(pcregrep -Mrn --include="\w\.java"  "if\(.*\)(\n|.)*}(\n|\s|else)*if\(.*\)" . | grep ":[[:digit:]]" | wc -l)
 echo $count
-
 if [ $count -gt 0 ]
 	then pcregrep -Mrn --include="\w\.java"  "if\(.*\)(\n|.)*}(\n|\s|else)*if\(.*\)" .
+fi
+echo ""
+echo ""
+echo "Switches"
+count=$(grep -Rn "switch" --include=*.java . |  wc -l)
+echo $count
+if [ $count -gt 0 ]
+	then grep -Rn "switch" --include=*.java .
 fi
