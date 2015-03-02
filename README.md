@@ -24,3 +24,4 @@ TA. When run over the top of directory contained in a git repo, it returns the f
 * Number of global variables used and where they are used.
 * Mutliple if statements used in succession (not necessarily a sign of bad code, but often indicates place where inheritance should have been used).
   * Requires pcregrip to be installed in your bash environment 
+* Switch statements 
