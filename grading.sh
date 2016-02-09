@@ -57,10 +57,10 @@ echo $count
 echo ""
 echo ""
 echo "public variables"
-count=$(grep -Rn "public [^(]*$" --include=*.java . | grep -v "final" | grep -v "class" | wc -l)
+count=$(grep -Rn "public [^(]*$" --include=*.java . | grep -v "final" | grep -v "class" | grep -v "enum" | wc -l)
 echo $count
 if [ $count -gt 0 ]
-	then grep -Rn "public [^(]*$" --include=*.java . | grep -v "final" | grep -v "class"
+	then grep -Rn "public [^(]*$" --include=*.java . | grep -v "final" | grep -v "class" | grep -v "enum"
 fi
 echo ""
 echo ""
@@ -84,4 +84,3 @@ count=$(grep -Rn "switch" --include=*.java . |  wc -l)
 echo $count
 if [ $count -gt 0 ]
 	then grep -Rn "switch" --include=*.java .
-fi
